@@ -51,7 +51,6 @@ export const Gameboard = () => {
           nearCells.push(`${row + 1}-${col + 1}`)
         }
       }
-      console.log(`${row}-${col}`, nearCells)
       outArr.push({className: "grid-item", id: `${row}-${col}`, flaged: false, hasBomb: false, clear: false, nearCells: nearCells})
       fullBoardArr.push(`${row}-${col}`)
       col++
@@ -100,7 +99,7 @@ export const Gameboard = () => {
         {tableItems.map(item => {
           return(
             gameStatus === 'over' ? <div key={item.id} className={item.className} id={item.id} ></div> :
-            <div key={item.id} className={item.className} id={item.id} onClick={(event) => cellClick(event.target.id)} >{item.id}</div>
+            <div key={item.id} className={item.className} id={item.id} onClick={(event) => cellClick(event.target.id)} ></div>
           )
         })}
       </div>
